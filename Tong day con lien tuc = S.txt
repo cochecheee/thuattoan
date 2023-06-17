@@ -1,0 +1,32 @@
+Cho một mảng A chưa được sắp xếp có kích thước N chỉ chứa các số nguyên dương, hãy tìm một mảng con liên tục cộng lại với nhau bằng S đã cho và trả về chỉ số trái và phải của mảng con đó.
+
+Trong trường hợp có nhiều mảng con, hãy trả về các chỉ mục mảng con xuất hiện đầu tiên khi di chuyển từ trái sang phải.
+
+Chú ý: - Bạn phải trả về một ArrayList gồm 2 phần tử left và right. Trong trường hợp không tồn tại mảng con như vậy, hãy trả về một mảng bao gồm phần tử -1.
+
+N = 5, S = 12
+A[] = {1,2,3,7,5}
+Output: 2 4
+
+vector<int> subarraySum(vector<int> arr, int n, long long s) {
+        
+        vector<int> res(2, -1);
+        int j; // index left
+        for (int i = 0; i < n; i++) {
+            long long sum = 0;
+            for (j = i; j < n; j++) {
+                if ((sum + arr[j]) <= s) {
+                    sum += arr[j];
+                } else {
+                    break; // Exit the inner loop if sum + arr[j] exceeds s
+                }
+            }
+            if (sum == s) {
+                res[0] = i+1;
+                res[1] = j; // When escaping the loop, j already added 1 unit
+                break;
+            }
+        }
+        if(res[0] == -1) return {-1};
+        return res;
+    }

@@ -1,0 +1,4 @@
+﻿  brouteforce.cpp
+D:\thuattoan\brouteforce\brouteforce\brouteforce.cpp(30,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\thuattoan\brouteforce\brouteforce\brouteforce.cpp(31,23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  brouteforce.vcxproj -> D:\thuattoan\brouteforce\x64\Debug\brouteforce.exe
